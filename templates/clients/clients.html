@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block content  %}
+
+<section class="ftco-section projects-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center heading-section ftco-animate m-top">
+          
+          <h2 class="mb-3 color-main">Happy <span class='text-light'>Clients</span> </h2>
+        </div>
+      </div>
+      <div class="row ftco-animate">
+        <div class="col-md-12">
+        <div class='row'> 
+        
+            {% for client in clients %}
+            <div class='col-md-4'> 
+            <div class="item">
+              <div class="testimony-wrap text-center py-4 pb-5">
+                <div class="mb-4">
+                  <a href="{% url 'client' client.id  %}"><img class='img-client' src="{{ client.image.url }}" alt=""></a>
+                </div>
+                <div class="text pt-4">
+                  <p class="mb-4 text-light">{{ client.description }}</p>
+                  <p class="name">{{ client.name }}</p>
+                  <span class="position">{{ client.jobside }}</span>
+                </div>
+              </div>
+            </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+{% endblock %}

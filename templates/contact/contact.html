@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header id="page-header" class="bg-dark text-white p-5">
+  <div class="container">
+    <div class="row">
+     
+    </div>
+  </div>
+</header>
+<section id="about" class="py-3 bg-dark text-light">
+  <div class="container">
+    <hr />
+     <div class="col-md-6 m-auto text-center">
+        <h1 class="text-light mt-4">Contact Us</h1>
+      </div>
+    <div class='col-12 d-flex justify-content-center ' >
+    
+    <div class='col-md-6 col-sm-12'>
+
+ <form method='post'> 
+ {% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='send' class='btn btn-outline-warning btn-lg text-light ' >
+
+  </form>
+
+</div>
+  
+  </div>
+    
+    <hr />
+  </div>
+</section>
+
+
+
+
+
+{% endblock content %}

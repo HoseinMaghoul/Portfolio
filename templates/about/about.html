@@ -1,0 +1,105 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<header id="page-header" class="bg-dark text-white p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center">
+        <h1 class="text-dark">About Us</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-3 bg-dark text-light">
+  <div class="container">
+    <hr />
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="text-secondary mb-5">{{about.title}}</h1>
+
+        <p>{{about.description}}</p>
+      </div>
+      <div class="col-md-6">
+        <img src="{{ about.image.url }}" alt="" class="about-img img-fluid profile-image " />
+      </div>
+    </div>
+    <hr />
+  </div>
+</section>
+
+<!-- ICON BOXES -->
+
+<div class="col-12 d-flex justify-content-center text-center bg-dark text-light">
+  <h3 class="line text-warning mb-0">Skills</h3>
+</div>
+
+<section id="icon-boxes" class="p-5 bg-dark text-light">
+  <div class="container">
+    <div class="row mb-4">
+      {% for skill in skills %}
+      <div class="col-md-4 mb-3">
+        <div class="card bg-dark p-4 text-center text-secondary border-secondary">
+          <div class="card-body text-light">
+            <h5 class='text-light'>  {{skill.title}}</h5>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:{{skill.rate}}%"></div>
+            </div>
+            <div class="mt-2">
+              <h5 class='text-light'>{{skill.rate}}%</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <hr />
+  </div>
+</section>
+
+<!-- STAFF SECTION -->
+{% comment %} <section class="contact-section bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">Address</h4>
+            <hr class="my-4" />
+            <div class="small text-black-50">{{profile.address}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-envelope text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">Email</h4>
+            <hr class="my-4" />
+            <div class="small text-black-50">
+              <a href="#!">{{profile.email}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">Phone</h4>
+            <hr class="my-4" />
+            <div class="small text-black-50">{{profile.phone}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social d-flex justify-content-center">
+      <a class="mx-2 mb-3" href="#!"><i class="fab fa-instagram mt-3"></i></a><a class="mx-2"
+        href="https://web.whatsapp.com/"><i class="fab fa-whatsapp mt-3"></i></a><a class="mx-2"
+        href="https://github.com/aliemamalinezhad"><i class="fab fa-github mt-3"></i></a>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% endblock content %}
